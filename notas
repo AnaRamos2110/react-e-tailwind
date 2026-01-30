@@ -1,0 +1,44 @@
+Hoje, será aprendido alguns conceitos de como configurar react
+
+para começar um projeto com react costuma ser dificíl. portanto iremos montar algo do zero;
+
+
+Linguagens -- TypeScript
+Css em desuso, será utilizado: -- Tailwind
+
+react é considerado um framework´é uma biblioteca frontend de javascript, é open source e qualquer um pode contribuir com a aplicação;
+
+O react não possui um compilador, então usamos o vite
+antigamente o próprio react conseguia rodar mas costumava ser mais trabalhoso, então o vite surgiu  aprox em 2020;
+
+
+npm create vite@latest psy -- --template react-ts (Já seleciona o react com o type script)
+
+obs: vite, react, tailwindcss, todos possuem documentação ensinando a usar;
+
+
+1-- configuração do react;
+2-- configuração do vite
+3-- configuração do tailwind
+4-- configuração do shadcn (Slate)
+
+criar o botão usando a biblioteca do shad dentro do terminal;
+
+
+comandos para as instalações:
+
+Sequencia para instalar o vite + react + tailwind + shad
+
+npm create vite@latest psy -- --template react-ts (Não usar a versão experimental e dar npm start para terminar as configurações e se certificar que instalou td.)
+
+npm install -D tailwindcss@3 postcss autoprefixer
+
+npx tailwindcss init -p
+
+npm install -D @types/node
+
+npm install -D shadcn@3.0.7 ou npx shadcn@latest init
+
+npx shadcn@latest add button
+
+Shad no estilo (SLATE)
