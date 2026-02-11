@@ -5,7 +5,7 @@ interface EndSreenProps {
   OnRestart: () => void;
 }
 
-export const EndSreenProps = ({ OnRestart }: EndSreenProps) => {
+export const EndScreen = ({ OnRestart }: EndSreenProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

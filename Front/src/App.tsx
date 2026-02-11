@@ -1,11 +1,10 @@
-import { WelcomeScreen } from "./components/WelcomeScreen";
+import { ChatInterface } from "./components/ChatInterface";
 
 function App() {
-  const handleStart = () => {};
-  return (
-  <div>
-    <WelcomeScreen onStart={handleStart} />
-  </div>
+  return(
+    <div>
+      <ChatInterface onEnd={() => console.log("Voltar clicando")} />
+    </div>
   )
 }
 
