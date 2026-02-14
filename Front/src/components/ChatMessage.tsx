@@ -13,11 +13,10 @@ export const ChatMessage = ({ message, isAi }: ChatMessageProps) => {
       className={`flex ${isAi ? "justify-start" : "justify-end"} mb-4`}
     >
       <div
-        className={`max-w-[80%] p-4 rounded-2xl ${
-          isAi
+        className={`max-w-[80%] p-4 rounded-2xl ${isAi
             ? "bg-white/80 text-gray-800 rounded-tl-sm"
             : "bg-primary text-gray-800 rounded-tr-sm"
-        } shadow-sm`}
+          } shadow-sm`}
       >
         <p className="text-lg">{message}</p>
       </div>
