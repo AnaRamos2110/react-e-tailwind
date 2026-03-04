@@ -15,7 +15,7 @@ export const ChatMessage = ({ message, isAi }: ChatMessageProps) => {
       <div
         className={`max-w-[80%] p-4 rounded-2xl ${isAi
             ? "bg-white/80 text-gray-800 rounded-tl-sm"
-            : "bg-primary text-gray-800 rounded-tr-sm"
+            : "bg-primary text-gray-300 rounded-tr-sm"
           } shadow-sm`}
       >
         <p className="text-lg">{message}</p>

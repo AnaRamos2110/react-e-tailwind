@@ -8,11 +8,46 @@ interface ChatInterfaceProps {
     onEnd: () => void;
 }
 
+
 export const ChatInterface = ({ onEnd }: ChatInterfaceProps) => {
     const [input, setInput] = useState("");
     const [messages, setMessages] = useState([
         { text: "Olá! Como posso te ajudar?", isAi: true },
     ]);
+
+    const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!input.trim()) return;
+
+    const userMessage = { text: input, isAi: false };
+
+    // Adiciona mensagem do usuário na tela
+    setMessages((prev) => [...prev, userMessage]);
+    setInput("");
+
+    try {
+        const response = await fetch("http://localhost:3000/api/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ text: input }),
+        });
+
+        const data = await response.json();
+
+        const aiMessage = {
+            text: data.response, // depende do que seu backend retorna
+            isAi: true,
+        };
+
+        setMessages((prev) => [...prev, aiMessage]);
+    } catch (error) {
+        console.error("Erro ao enviar mensagem:", error);
+    }
+};
+
     return (
         <div className="flex flex-col h-full">
             {/* Header */}
@@ -32,7 +67,7 @@ export const ChatInterface = ({ onEnd }: ChatInterfaceProps) => {
 
             {/* Area do Input */}
             <div className="p-4 border-t bg-white/50">
-                <form className="flex gap-2">
+                <form className="flex gap-2" onSubmit={handleSubmit}>
                     <Input
                         value={input}
                         onChange={(e) => setInput(e.target.value)}

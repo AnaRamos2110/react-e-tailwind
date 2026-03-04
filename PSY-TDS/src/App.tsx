@@ -15,7 +15,7 @@ export default App;
 
 //github.com/GodoyEducacional/psy-TDS2
 
-//https://console.groq.com/hpme
+//https://console.groq.com/home
 //configurar o .env do backend
 //Front-end -> npm run dev
 //back-end -> npm run dev
